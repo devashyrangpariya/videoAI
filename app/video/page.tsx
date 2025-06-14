@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import VideoFeed from "@/app/components/VideoFeed";
+import VideoFeed from "@/app/components/video/VideoFeed";
 import { toast } from "react-hot-toast";
 import Link from "next/link";
 import { PlusCircle } from "lucide-react";

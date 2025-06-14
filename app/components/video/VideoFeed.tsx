@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
-import VideoCard from "@/app/components/VideoCard";
+import VideoCard from "@/app/components/video/VideoCard";
 
 interface Video {
   _id: string;

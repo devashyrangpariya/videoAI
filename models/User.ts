@@ -6,6 +6,7 @@
  */
 
 import mongoose, { Schema, Document } from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 /**
  * User interface defining the structure of a user document
@@ -13,10 +14,12 @@ import mongoose, { Schema, Document } from 'mongoose';
 export interface IUser extends Document {
   name?: string;
   email: string;
+  password: string;
   image?: string;
   role: 'user' | 'admin';
   createdAt: Date;
   updatedAt: Date;
+  comparePassword(candidatePassword: string): Promise<boolean>;
 }
 
 /**
@@ -35,6 +38,11 @@ const UserSchema = new Schema<IUser>(
       lowercase: true,
       trim: true,
     },
+    password: {
+      type: String,
+      required: [true, 'Password is required'],
+      minlength: [6, 'Password must be at least 6 characters long'],
+    },
     image: {
       type: String,
     },
@@ -48,6 +56,28 @@ const UserSchema = new Schema<IUser>(
     timestamps: true,
   }
 );
+
+// Hash password before saving
+UserSchema.pre('save', async function(next) {
+  if (!this.isModified('password')) return next();
+  
+  try {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+  } catch (error) {
+    next(error as Error);
+  }
+});
+
+// Method to compare password
+UserSchema.methods.comparePassword = async function(candidatePassword: string): Promise<boolean> {
+  try {
+    return await bcrypt.compare(candidatePassword, this.password);
+  } catch (error) {
+    throw error;
+  }
+};
 
 // Use existing model or create a new one
 const User = mongoose.models.User || mongoose.model<IUser>('User', UserSchema);
