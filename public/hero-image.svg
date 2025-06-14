@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#3A0CA3" />
+  <rect width="800" height="600" rx="20" fill="url(#paint0_linear)" />
+  
+  <!-- Video player frame -->
+  <rect x="100" y="100" width="600" height="400" rx="16" fill="#1E1E2E" stroke="white" stroke-opacity="0.1" stroke-width="2"/>
+  
+  <!-- Play button -->
+  <circle cx="400" cy="300" r="60" fill="#4338CA" />
+  <path d="M425 300L385 325V275L425 300Z" fill="white" />
+  
+  <!-- Video timeline -->
+  <rect x="150" y="450" width="500" height="8" rx="4" fill="#6B7280" fill-opacity="0.3" />
+  <rect x="150" y="450" width="300" height="8" rx="4" fill="#8B5CF6" />
+  
+  <!-- Video controls icons -->
+  <!-- Play/Pause -->
+  <rect x="150" y="480" width="30" height="30" rx="4" fill="white" fill-opacity="0.1" />
+  
+  <!-- Volume -->
+  <rect x="200" y="480" width="30" height="30" rx="4" fill="white" fill-opacity="0.1" />
+  
+  <!-- Settings -->
+  <rect x="250" y="480" width="30" height="30" rx="4" fill="white" fill-opacity="0.1" />
+  
+  <!-- Fullscreen -->
+  <rect x="620" y="480" width="30" height="30" rx="4" fill="white" fill-opacity="0.1" />
+  
+  <!-- Video title -->
+  <rect x="150" y="150" width="300" height="24" rx="4" fill="white" fill-opacity="0.1" />
+  
+  <!-- Star effects -->
+  <circle cx="700" cy="120" r="4" fill="white" fill-opacity="0.8" />
+  <circle cx="150" cy="400" r="3" fill="white" fill-opacity="0.6" />
+  <circle cx="650" cy="350" r="2" fill="white" fill-opacity="0.7" />
+  <circle cx="250" cy="120" r="3" fill="white" fill-opacity="0.5" />
+  <circle cx="500" cy="450" r="2" fill="white" fill-opacity="0.6" />
+  
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4338CA" />
+      <stop offset="1" stop-color="#7E22CE" />
+    </linearGradient>
+  </defs>
+</svg> 
